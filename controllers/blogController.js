@@ -12,6 +12,13 @@ export const createBlog = async (req,res)=> {
 }
 
 export const getAllBlogs = async (req,res)=> {
-     const user = await Blog.find()
+     const user = await Blog.find().populate('author')
     res.json(user).status(201)
 }
+
+export const getBlogById = async (req,res)=> {
+     const blog = await Blog.findById(req.params.id)
+    res.json(blog).status(201)
+}
+
+

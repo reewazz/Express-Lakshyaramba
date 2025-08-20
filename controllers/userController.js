@@ -11,6 +11,7 @@ export const createUser = async (req,res)=> {
         console.log(err)
     }
 }
+
 export const getAllUser = async (req,res)=> {
      const user = await User.find()
     res.json(user).status(201)
